@@ -16,22 +16,15 @@ label{
 button{
     font-style: oblique;
     color-scheme: dark;
-    
+    margin-bottom: 100px;
+    border-radius: 60px;
+    border-color: black;
 }
 
 p{
     font-size: x-large;
 }
 
-.card-header{
-    font-size: xx-large;
-}
-
-.card-footer{
-    margin-top: 100px;
+span{
     font-size: larger;
-}
-
-.card-footer{
-    font: bold;
 }
