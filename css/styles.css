@@ -2,8 +2,10 @@
 
 body{
     align-content: center;
-    display: flex;
+    background-color:aquamarine;
     text-align: center;
+    width:1000px;
+    margin:0px auto;
 }
 
 label{
@@ -28,4 +30,8 @@ p{
 .card-footer{
     margin-top: 100px;
     font-size: larger;
+}
+
+.card-footer{
+    font: bold;
 }

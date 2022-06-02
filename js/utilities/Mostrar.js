@@ -238,8 +238,6 @@ class Mostrar {
     nicknameInput.required = true;
 
     const nicknameLabel = document.createElement("label");
-    nicknameLabel.setAttribute("for", "floatingInput");
-    nicknameLabel.innerText = "Nombre de Usuario";
 
     const divButton = document.createElement("div");
     divButton.classList.add("d-flex", "justify-content-between");
