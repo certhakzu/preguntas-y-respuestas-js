@@ -16,6 +16,10 @@ class Registro {
     this.#historyArray.push(filterData);
   }
 
+  /**
+   * Lee y carga los score anteriores
+   * @returns Array con el historico de score anterior
+   */
   readPreviousHistory() {
     const localStoredArray = localStorage.getItem("savedData");
     if (localStoredArray) {
@@ -25,6 +29,10 @@ class Registro {
     return [];
   }
 
+  /**
+   * Guarda el score en el Local Storage del Navegador
+   * @param {Concurso} concurso El concurso en ejecucion
+   */
   saveToLocalStorage(concurso) {
     const filterData = this.extractImportantData(concurso);
     const currentSave = this.readPreviousHistory();
@@ -33,6 +41,11 @@ class Registro {
     localStorage.setItem("savedData", historyArray);
   }
 
+  /**
+   * Importa los score
+   * @param {Concurso} concurso El Concurso en ejecución
+   * @returns un objecto con los datos del score
+   */
   extractImportantData(concurso) {
     const score = concurso.showScore();
     const maxLevel = concurso.getCurrentLevel();
