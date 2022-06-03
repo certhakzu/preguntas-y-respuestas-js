@@ -1,5 +1,11 @@
+/**
+ * Clase para gestionar las Preguntas
+ */
 class Pregunta {
     #question
+    /**
+     * @param {String} questionsByLevel Nivel de la pregunta (categoria)
+     */
     constructor(questionsByLevel) {
       this.#question = this.getRandomQuestion(questionsByLevel)
     }

@@ -1,7 +1,15 @@
 import Registro from "./Registro.js";
 
+/**
+ * Clase para gestionar toda la parte visual del juego, es aqui donde se crea el HTML
+ */
 class Mostrar {
   constructor() {}
+
+  /**
+   * 
+   * @returns Todo el elemento contenedor de la pregunta con sus respuestas, como tal.
+   */
   #generateInnerRoot() {
     const innerRoot = document.createElement("div");
     innerRoot.id = "inner-root";
@@ -20,12 +28,21 @@ class Mostrar {
     return cardText;
   }
 
+  /**
+   * Genera el Boton para continuar
+   * @returns Boton Coninuar
+   */
   #generateContinueButton() {
     const continueButton = document.createElement("button");
     continueButton.classList.add("btn", "btn-success");
     return continueButton;
   }
 
+  /**
+   * Genra un boton con una opcion de respuesta
+   * @param {String} buttonText Genera boton que representa una de las opciones de respuesta
+   * @returns el boton coomo una opcion de respuesta
+   */
   #generateAnswerButton(buttonText) {
     const answerButton = document.createElement("button");
     answerButton.classList.add("list-group-item", "list-group-item-action");
@@ -64,6 +81,10 @@ class Mostrar {
     root.append(innerRoot);
   }
 
+  /**
+   * Muestra el historial de los jugadoresss
+   * @param {Registro} registro Registro con todos los score
+   */
   historyScreen(registro) {
     this.erase();
     const registros = registro.getHistory();
@@ -114,6 +135,10 @@ class Mostrar {
     root.appendChild(innerRoot);
   }
 
+  /**
+   * Establece y muestra todo el "ambiente" del concurso, donde se "moveran" las preguntas
+   * @param {Concurso} concurso El concurso en curso
+   */
   questionScreen(concurso) {
     this.erase();
     const registro = new Registro();
@@ -168,6 +193,9 @@ class Mostrar {
     root.append(innerRoot);
   }
 
+  /**
+   * Muestra los elementos cuando se gana
+   */
   winnerScreen() {
     this.erase();
     const root = this.#selectRootReference();
@@ -193,6 +221,9 @@ class Mostrar {
     root.append(innerRoot);
   }
 
+  /**
+   * Muestra los elementos cuando se pierde
+   */
   loserScreen(callback) {
     this.erase();
     const root = this.#selectRootReference();
@@ -277,6 +308,9 @@ class Mostrar {
     root.append(innerRoot);
   }
 
+  /**
+   * Limpia el elemento base donde sucde el juego
+   */
   erase() {
     const innerRoot = document.querySelector("#inner-root");
     if (innerRoot) {

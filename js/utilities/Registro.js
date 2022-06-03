@@ -1,3 +1,6 @@
+/**
+ * Clase de Registro
+ */
 class Registro {
   #historyArray;
   constructor() {

@@ -21,6 +21,9 @@ const preguntas = [
 const singleGameInstance = new Concurso(preguntas, new Concursante('defaultUser'));
 const singleDisplayInstance = new Mostrar();
 
+/**
+ * Clase para gestionar la dinámica del Concurso
+ */
 class GestionadorDeConcurso {
   constructor() {}
 
